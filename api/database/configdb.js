@@ -3,7 +3,10 @@ import mongoose from 'mongoose';
 const connect = async () => {
     try{
         mongoose.set("strictQuery",true);
-        await mongoose.connect(process.env.MONGO_URI,{ dbName: process.env.MONGO_DB_NAME,});
+        if (!process.env.MONGO_URI || !process.env.MONGO_DB_NAME) {
+            throw new Error("Environment variables MONGO_URI or MONGO_DB_NAME are not defined");
+        }
+        await mongoose.connect(process.env.MONGO_URI, { dbName: process.env.MONGO_DB_NAME });
         console.log("MongoDB connected");
 
     }

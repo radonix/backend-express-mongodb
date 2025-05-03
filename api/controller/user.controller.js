@@ -1,4 +1,5 @@
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 import User from "../models/User.js"
 
 const register = async (req,res) => {
@@ -22,4 +23,32 @@ const register = async (req,res) => {
         return res.status(500).json({message: "Error saving user"});
     }
 };
-export default {register};
+
+const login = async (req,res) => {
+    console.log("Logging in user:",req.body);
+    if(!req.body || !req.body.username || !req.body.password){
+        return res.status(400).json({message: "Username and password are required"});
+    }
+
+    const {username, password} = req.body;
+
+    try{
+        const user = await User.findOne({username});
+        if(!user){
+            return res.status(400).json({message: "User not found"});
+        }
+        const isMatch = bcrypt.compare(password, user.password);
+        console.log("Password match:", isMatch);
+        if(!isMatch){
+            return res.status(400).json({message:"Invalid credentials"});
+        }
+        console.log("User logged in successfully:",user.username);
+        const token = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: '1h'});
+        return res.status(200).json({message: "Login successful", token});
+    } catch (error){
+        console.error("Error logging in user:",error);
+        return res.status(500).json({message: `Error logging in user: ${error}`})
+    }
+}
+
+export default {register,login};
