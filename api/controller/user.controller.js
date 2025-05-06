@@ -27,11 +27,11 @@ const register = async (req,res) => {
 
 const login = async (req,res) => {
     console.log("Logging in user:",req.body);
-    if(!req.body || !req.body.name || !req.body.email || !req.body.password){
+    if(!req.body  || !req.body.email || !req.body.password){
         return res.status(400).json({message: "name, email and password are required"});
     }
 
-    const {name, email, password} = req.body;
+    const {email, password} = req.body;
 
     try{
         const user = await User.findOne({email}).select('+password');
