@@ -4,16 +4,17 @@ import User from "../models/User.js"
 
 const register = async (req,res) => {
     console.log("Registering User",req.body);
-    if(!req.body || !req.body.username || !req.body.password){
-        return res.status(400).json({message: "Username and password are required"});
+    if(!req.body|| !req.body.name  || !req.body.email || !req.body.password){
+        return res.status(400).json({message: "name, email and password are required"});
     }
-    const {username,password} = req.body;
+    const {name,email,password} = req.body;
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password,salt);
     try{
         const savedUser = await User.create({
-            username,
+            name,
+            email,
             password: hashedPassword
         });
         console.log("Saved user:",savedUser);
@@ -26,14 +27,14 @@ const register = async (req,res) => {
 
 const login = async (req,res) => {
     console.log("Logging in user:",req.body);
-    if(!req.body || !req.body.username || !req.body.password){
-        return res.status(400).json({message: "Username and password are required"});
+    if(!req.body || !req.body.name || !req.body.email || !req.body.password){
+        return res.status(400).json({message: "name, email and password are required"});
     }
 
-    const {username, password} = req.body;
+    const {name, email, password} = req.body;
 
     try{
-        const user = await User.findOne({username}).select('+password');
+        const user = await User.findOne({email}).select('+password');
         if(!user){
             return res.status(400).json({message: "User not found"});
         }
@@ -42,7 +43,7 @@ const login = async (req,res) => {
         if(!isMatch){
             return res.status(400).json({message:"Invalid credentials"});
         }
-        console.log("User logged in successfully:",user.username);
+        console.log("User logged in successfully:",user.email);
         const token = jwt.sign({id: user._id}, process.env.JWT_SECRET, {expiresIn: '1h'});
         return res.status(200).json({message: "Login successful", token});
     } catch (error){
