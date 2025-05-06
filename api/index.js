@@ -11,10 +11,10 @@ db.connect();
 
 const app = express();
 app.use(express.json());
-app.use("./users",userRoute);
+app.use("/users",userRoute);
 app.use("/secureExampleRoute",exampleRoute);
 
-app.get('/',(_, res) => {
+app.get('/',(req, res) => {
     res.send({message: 'Hello World'});
 });
 
