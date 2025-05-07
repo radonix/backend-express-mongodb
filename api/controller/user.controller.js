@@ -26,21 +26,21 @@ const register = async (req, res) => {
         return res.status(400).json({ message: "Password must be at least 8 characters long and contain at least one special character" });
     }
 
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
     try {
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
+
         const savedUser = await User.create({
             name,
             email,
             password: hashedPassword
         });
+
         console.log("Saved user:", savedUser);
         return res.status(200).json({ message: 'user registered successfully:', user: savedUser });
     } catch (error) {
-        console.error("Error saving user:", error);
-        console.error("Error details:", error.message); // Log the error message
-        console.error("Error stack:", error.stack);     // Log the stack trace
-        return res.status(500).json({ message: "Error saving user" });
+        console.error("Error during registration:", error);
+        return res.status(500).json({ message: "Error saving user", error: error.message });
     }
 };
 
