@@ -38,6 +38,8 @@ const register = async (req, res) => {
         return res.status(200).json({ message: 'user registered successfully:', user: savedUser });
     } catch (error) {
         console.error("Error saving user:", error);
+        console.error("Error details:", error.message); // Log the error message
+        console.error("Error stack:", error.stack);     // Log the stack trace
         return res.status(500).json({ message: "Error saving user" });
     }
 };
