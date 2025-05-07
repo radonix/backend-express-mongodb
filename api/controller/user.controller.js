@@ -84,6 +84,10 @@ const login = async (req, res) => {
             return res.status(400).json({ message: "Invalid credentials" });
         }
         console.log("User logged in successfully:", user.email);
+        if (!process.env.JWT_SECRET) {
+            console.error("JWT_SECRET is not defined in environment variables");
+            return res.status(500).json({ message: "Internal server error: Missing JWT_SECRET" });
+        }
         const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
         return res.status(200).json({ message: "Login successful", token });
     } catch (error) {
