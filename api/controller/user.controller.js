@@ -27,6 +27,12 @@ const register = async (req, res) => {
     }
 
     try {
+        // Check if the email is already registered
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ message: "Email is already registered" });
+        }
+
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
@@ -52,13 +58,9 @@ const login = async (req, res) => {
 
     const { email, password } = req.body;
 
-    // Check if email is not null
-    if (!email) {
-        return res.status(400).json({ message: "Email cannot be null" });
-    }
-        // Check if email is not null
-    if (!password) {
-        return res.status(400).json({ message: "Password cannot be null" });
+    // Check if email and password are not null
+    if (!email || !password) {
+        return res.status(400).json({ message: "Email and password cannot be null" });
     }
 
     // Check if email is in the correct format
