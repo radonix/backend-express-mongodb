@@ -1,0 +1,1 @@
+curl --request GET  --url 'https://express-backend-example-jet.vercel.app/secureExampleRoute'  --header 'Authorization: Bearer'

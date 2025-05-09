@@ -1,0 +1,2 @@
+curl --request POST --url 'http://localhost:3000/users/register' --header 'Content-Type: application/json'  --data '{ "name": "newuser7777","email": "newuser1235@gmail.com", "password": "securepassword@21354684"}'
+curl --request POST --url 'http://localhost:3000/users/register' --header 'Content-Type: application/json'  --data '{ "name": "newuser75395","email": "newuser1235@gmail.com", "password": "securepassword@789465"}'

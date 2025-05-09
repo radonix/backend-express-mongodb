@@ -1,0 +1,1 @@
+curl --request POST --url 'https://express-backend-example-jet.vercel.app/users/register' --header 'Content-Type: application/json'  --data '{ "name": "newuser1113"}'
