@@ -1,1 +1,1 @@
-curl --request POST --url 'http://localhost:3000/users/login' --header 'Content-Type: application/json'  --data '{ "name": "newuser1234","email": "newuser1234@gmail.com", "password": "securepassword@753"}'
+curl --request POST --url 'http://localhost:3000/users/login' --header 'Content-Type: application/json'  --data '{ "name": "newuser1350","email": "newuser1350@gmail.com", "password": "securepassword@9874651"}'
