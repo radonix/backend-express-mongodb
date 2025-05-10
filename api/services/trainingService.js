@@ -1,5 +1,5 @@
-const Training = require('../models/Training');
-const logger = require('../utils/logger'); // Importe o logger
+import Training from '../models/Training.js';
+import logger from '../utils/logger.js'; // Importe o logger
 
 const trainingService = {
   async createTraining(userId, trainingData) {
@@ -68,4 +68,4 @@ const trainingService = {
   },
 };
 
-module.exports = trainingService;
+export default trainingService;
