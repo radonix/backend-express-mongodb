@@ -5,6 +5,12 @@ import authMiddleware from '../middleware/authMiddleware.js';       // Ajuste o 
 const router = express.Router();
 
 router.use(authMiddleware);
-router.post('/trainings', trainingController.createTraining);
+router.post('/', trainingController.createTraining);
+router.get('/', trainingController.getAllTrainings);
+router.get('/:id', trainingController.getTrainingById);
+router.put('/:id', trainingController.updateTraining);
+router.delete('/:id', trainingController.deleteTraining);
+router.patch('/:id', trainingController.partialUpdateTraining);
+
 
 export default router;
