@@ -6,3 +6,67 @@
 2025-05-11 00:43:53 info: Treino 681ff07eaeef090dbe8d0ad2 do usuário 681fed3faeef090dbe8d0ac0 atualizado.
 2025-05-11 00:45:45 info: Treino 681ff07eaeef090dbe8d0ad2 do usuário 681fed3faeef090dbe8d0ac0 atualizado.
 2025-05-11 00:55:45 info: Treino criado com ID: 681ff5913d6798f357e9e745 para o usuário 681feedfaeef090dbe8d0ac4
+2025-05-17 15:28:54 error: Erro ao criar treino para o usuário [object Object]: Training validation failed: userId: Cast to ObjectId failed for value "{
+  name: 'Treino de Pernas user 2',
+  description: 'Agachamentos, leg press, extensora',
+  date: '2024-08-01',
+  exercises: [
+    { name: 'Agachamento', sets: 3, reps: 10, weight: 100 },
+    { name: 'Leg Press', sets: 3, reps: 12, weight: 150 }
+  ]
+}" (type Object) at path "userId" because of "BSONError", date: Path `date` is required., name: Path `name` is required.
+2025-05-17 15:34:39 error: Erro ao criar treino para o usuário [object Object]: Training validation failed: date: Path `date` is required., name: Path `name` is required.
+2025-05-17 15:38:37 error: Erro ao criar treino para o usuário [object Object]: Training validation failed: date: Path `date` is required., name: Path `name` is required.
+2025-05-17 15:57:19 error: Erro ao criar treino para o usuário [object Object]: Training validation failed: date: Path `date` is required., name: Path `name` is required.
+2025-05-17 15:59:28 error: Erro ao criar treino para o usuário [object Object]: Training validation failed: date: Path `date` is required., name: Path `name` is required.
+2025-05-17 16:07:15 error: Erro ao criar treino para o usuário [object Object]: Training validation failed: date: Path `date` is required., name: Path `name` is required.
+2025-05-17 16:10:29 error: Erro ao criar treino para o usuário [object Object]: Training validation failed: date: Path `date` is required., name: Path `name` is required.
+2025-05-17 16:12:48 error: Erro ao criar treino para o usuário [object Object]: Training validation failed: date: Path `date` is required., name: Path `name` is required.
+2025-05-17 16:14:38 error: Erro ao criar treino para o usuário [object Object]: Training validation failed: date: Path `date` is required., name: Path `name` is required.
+2025-05-17 16:17:15 error: Erro ao criar treino para o usuário [object Object]: Training validation failed: date: Path `date` is required.
+2025-05-17 16:18:21 info: Treino criado com ID: 6828b6cdb46b1f90e593e160 para o usuário [object Object]
+2025-05-17 16:27:13 error: Erro ao atualizar treino [object Object] do usuário 6828b6cdb46b1f90e593e160: Cast to ObjectId failed for value "{
+  name: 'Pernas',
+  description: 'Treino de Pernas',
+  date: '10-10-2025',
+  exercises: [ '10', '10', '10' ]
+}" (type Object) at path "_id" for model "Training"
+2025-05-17 16:27:19 error: Erro ao atualizar treino [object Object] do usuário 6828b6cdb46b1f90e593e160: Cast to ObjectId failed for value "{
+  name: 'Pernas',
+  description: 'Treino de Pernas',
+  date: '10-10-2025',
+  exercises: [ '10', '10', '10' ]
+}" (type Object) at path "_id" for model "Training"
+2025-05-17 16:27:36 error: Erro ao atualizar treino [object Object] do usuário 6828b6cdb46b1f90e593e160: Cast to ObjectId failed for value "{
+  name: 'Pernas',
+  description: 'Treino de Pernas',
+  date: '10-10-2025',
+  exercises: [ '10', '10', '10' ]
+}" (type Object) at path "_id" for model "Training"
+2025-05-17 16:27:51 warn: Treino undefined do usuário 6828b6cdb46b1f90e593e160 não encontrado para exclusão.
+2025-05-17 16:28:25 info: Treino criado com ID: 6828b929b46b1f90e593e169 para o usuário [object Object]
+2025-05-17 16:31:14 warn: Treino undefined do usuário 6828b929b46b1f90e593e169 não encontrado para exclusão.
+2025-05-17 16:31:41 info: Treino criado com ID: 6828b9edb46b1f90e593e16c para o usuário [object Object]
+2025-05-17 16:33:51 error: Erro ao criar treino para o usuário [object Object]: Training validation failed: name: Path `name` is required.
+2025-05-17 16:34:57 error: Erro ao criar treino para o usuário [object Object]: Training validation failed: date: Path `date` is required., name: Path `name` is required., description: Path `description` is required.
+2025-05-17 16:37:50 error: Erro ao criar treino para o usuário [object Object]: Training validation failed: date: Path `date` is required., name: Path `name` is required., description: Path `description` is required.
+2025-05-17 17:07:55 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: exercises: Cast to embedded failed for value "1" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 17:08:35 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: exercises: Cast to embedded failed for value "1" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 17:09:17 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: exercises: Cast to embedded failed for value "1" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 17:11:22 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: exercises: Cast to embedded failed for value "1" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 17:16:26 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: exercises: Cast to embedded failed for value "10" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 17:22:52 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: exercises: Cast to embedded failed for value "1" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 17:52:39 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: exercises: Cast to embedded failed for value "1" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 17:53:02 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: exercises: Cast to embedded failed for value "1" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 18:09:35 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: date: Cast to date failed for value "a" (type string) at path "date", exercises: Cast to embedded failed for value "a" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 18:12:55 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: date: Cast to date failed for value "a" (type string) at path "date", exercises: Cast to embedded failed for value "a" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 18:24:46 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: exercises: Cast to embedded failed for value "10" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 18:33:10 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: date: Cast to date failed for value "a" (type string) at path "date", exercises: Cast to embedded failed for value "a" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 18:37:47 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: date: Cast to date failed for value "a" (type string) at path "date", exercises: Cast to embedded failed for value "a" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 18:40:37 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: exercises: Cast to embedded failed for value "1" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 18:41:32 error: Erro ao criar treino para o usuário 6828b89db46b1f90e593e163: Training validation failed: exercises: Cast to embedded failed for value ""1" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 18:52:34 error: Erro ao criar treino para o usuário 6828daa8a79fc18b11b25fb4: Training validation failed: exercises: Cast to embedded failed for value "10" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 18:54:11 error: Erro ao criar treino para o usuário 6828daa8a79fc18b11b25fb4: Training validation failed: exercises: Cast to embedded failed for value "1" (type string) at path "exercises" because of "ObjectParameterError"
+2025-05-17 18:59:09 info: Treino criado com ID: 6828dc7da79fc18b11b25fbb para o usuário 6828daa8a79fc18b11b25fb4
+2025-05-17 19:09:16 info: Treino 6828dc7da79fc18b11b25fbb do usuário 6828daa8a79fc18b11b25fb4 atualizado.
+2025-05-17 19:09:53 info: Treino 6828dc7da79fc18b11b25fbb do usuário 6828daa8a79fc18b11b25fb4 atualizado.
