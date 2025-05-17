@@ -1,7 +1,7 @@
 echo "Enviando POST request para http://localhost:3000/trainings..."
-curl --request POST \
+curl  --request POST \
   --url "http://localhost:3000/trainings" \
-  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MWZlZWRmYWVlZjA5MGRiZThkMGFjNCIsImlhdCI6MTc0NjkyMzI1NiwiZXhwIjoxNzQ2OTI2ODU2fQ.P0bBl2XZ8mGvGmHEG5Vj6TMfTfzfMUIWN992AzBy60M" \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjhiMDhmYzQ1MzZlZTMyNjJmOWM1ZSIsImlhdCI6MTc0NzQ5NzIxOSwiZXhwIjoxNzQ3NTAwODE5fQ.BQKfEs33_zEh4s35gR7RIW7PNXyLnBJRMY_h2nySxFE" \
   -H "Content-Type: application/json" \
   --data '{
   "name": "Treino de Pernas user 2",

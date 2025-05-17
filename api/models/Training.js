@@ -23,22 +23,16 @@ const trainingSchema = new mongoose.Schema({
   },
   exercises: [
     {
-      name: { type: String, required: true, trim: true },
-      sets: { type: Number, required: true, min: 1 },
-      reps: { type: Number, required: true, min: 1 },
+      name: { type: String, trim: true },
+      sets: { type: Number, min: 1 },
+      reps: { type: Number, min: 1 },
       weight: { type: Number, default: 0 },
     },
   ],
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now,
-  },
+}, {
+  timestamps: true
 });
 
-const Training = mongoose.model('Training', trainingSchema);
+const Training = mongoose.models.Training || mongoose.model('Training', trainingSchema);
 
 export default Training;

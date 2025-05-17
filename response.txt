@@ -1,0 +1,1 @@
+{"message":"Erro ao criar treino.","error":"Training validation failed: date: Path `date` is required., name: Path `name` is required., description: Path `description` is required."}
