@@ -11,7 +11,7 @@ version: "1.0.0",
 description: "API documentada com Swagger",
 },
 },
-apis: ["./api/routes/*.js"],
+apis: ["./src/routes/*.js"],
 };
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 router.use("/docs", serve, setup(swaggerDocs));

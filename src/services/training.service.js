@@ -1,5 +1,5 @@
 import Training from '../models/Training.js';
-import logger from '../utils/logger.js'; // Importe o logger
+// import logger from '../utils/logger.js'; // Importe o logger
 
 const trainingService = {
 async createTraining(userId, trainingData) {
@@ -12,10 +12,10 @@ async createTraining(userId, trainingData) {
             date,
             exercises, // Ensure exercises is passed as is
         });
-        logger.info(`Treino criado com ID: ${newTraining._id} para o usuário ${userId}`);
+        // logger.info(`Treino criado com ID: ${newTraining._id} para o usuário ${userId}`);
         return newTraining;
     } catch (error) {
-        logger.error(`Erro ao criar treino para o usuário ${userId}: ${error.message}`);
+        // logger.error(`Erro ao criar treino para o usuário ${userId}: ${error.message}`);
         throw error;
     }
 },
@@ -24,7 +24,7 @@ async createTraining(userId, trainingData) {
       const trainings = await Training.find({ userId }).sort({ date: -1, createdAt: -1 });
       return trainings;
     } catch (error) {
-      logger.error(`Erro ao listar treinos do usuário ${userId}: ${error.message}`);
+      // logger.error(`Erro ao listar treinos do usuário ${userId}: ${error.message}`);
       throw error;
     }
   },
@@ -34,7 +34,7 @@ async createTraining(userId, trainingData) {
       const training = await Training.findOne({ _id: trainingId, userId });
       return training;
     } catch (error) {
-      logger.error(`Erro ao buscar treino ${trainingId} do usuário ${userId}: ${error.message}`);
+      // logger.error(`Erro ao buscar treino ${trainingId} do usuário ${userId}: ${error.message}`);
       throw error;
     }
   },
@@ -47,13 +47,13 @@ async createTraining(userId, trainingData) {
         { new: true, runValidators: true }
       );
       if (!updatedTraining) {
-        logger.warn(`Treino ${trainingId} do usuário ${userId} não encontrado para atualização.`);
+        // logger.warn(`Treino ${trainingId} do usuário ${userId} não encontrado para atualização.`);
         return null;
       }
-      logger.info(`Treino ${trainingId} do usuário ${userId} atualizado.`);
+      // logger.info(`Treino ${trainingId} do usuário ${userId} atualizado.`);
       return updatedTraining;
     } catch (error) {
-      logger.error(`Erro ao atualizar treino ${trainingId} do usuário ${userId}: ${error.message}`);
+      // logger.error(`Erro ao atualizar treino ${trainingId} do usuário ${userId}: ${error.message}`);
       throw error;
     }
   },
@@ -62,13 +62,13 @@ async createTraining(userId, trainingData) {
     try {
       const deletedTraining = await Training.findOneAndDelete({ _id: trainingId, userId });
       if (!deletedTraining) {
-        logger.warn(`Treino ${trainingId} do usuário ${userId} não encontrado para exclusão.`);
+        // logger.warn(`Treino ${trainingId} do usuário ${userId} não encontrado para exclusão.`);
         return null;
       }
-      logger.info(`Treino ${trainingId} do usuário ${userId} deletado.`);
+      // logger.info(`Treino ${trainingId} do usuário ${userId} deletado.`);
       return deletedTraining;
     } catch (error) {
-      logger.error(`Erro ao deletar treino ${trainingId} do usuário ${userId}: ${error.message}`);
+      // logger.error(`Erro ao deletar treino ${trainingId} do usuário ${userId}: ${error.message}`);
       throw error;
     }
   },
